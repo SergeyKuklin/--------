@@ -1,0 +1,72 @@
+body {
+    background: rgb(160, 160, 160);
+}
+
+.checkbox {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+label {
+    position: relative;
+}
+
+.text::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 70px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background: #000;
+    transition: background 0.5s;
+    z-index: -1;
+}
+
+.checkbox:checked ~ .text::before {
+    background: blue;
+    transition: background 0.5s 0.2s;
+}
+
+.checkbox:checked ~ .bear {
+    transform: translateX(40px) rotateZ(400grad);
+    transition: transform 0.5s, opacity 0s 0.5s;
+    opacity: 0;
+}
+
+.checkbox:checked ~ .bear__2 {
+    transform: translateX(40px) rotateZ(400grad);
+    transition: transform 0.5s, opacity 0s 0.5s;
+    opacity: 1;
+}
+
+.bear__2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.5s 0.2s;
+    opacity: 0;
+}
+
+.bear {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.5s 0.2s;
+}
+
+.bear__position {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateZ(180grad) translateX(60px);
+}
+
+.text {
+    margin-left: 90px;
+}
